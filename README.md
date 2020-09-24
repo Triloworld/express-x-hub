@@ -17,7 +17,8 @@ Then add the middleware to Express.js. It needs to be one of the first and befor
 ```javascript
 var xhub = require('express-x-hub');
 app.use(xhub({ algorithm: 'sha1', secret: XHUB_SECRET_HERE }));
-app.use(bodyParser());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(methodOverride());
 ```
 
